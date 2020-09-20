@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "40fd24be-3931-4acc-b5c8-8077eaa73067",
+		"name": "fit-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "request-integration-partner",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-fault-injection-id",
+						"value": "xxxxx",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/gas-station-api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gas-station-api"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-behaviors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/behaviors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"behaviors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-behavior-change-response",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"change-response\",\n    \"route\": \"/gas-station-api\",\n    \"httpStatus\": 200,\n    \"payloadResponse\": \"{\\r\\n \\\"name\\\": \\\"Loja de Conveni\\u00EAncia\\\",\\r\\n \\\"lat\\\": \\\"-26.99999\\\",\\r\\n \\\"lng\\\": \\\"-25.99999\\\",\\r\\n \\\"gas-types\\\": [\\r\\n \\\"Coca-Cola\\\",\\r\\n \\\"RedBull\\\"\\r\\n ]\\r\\n}\",\n    \"headersResponse\": {}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/behaviors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"behaviors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-delayed-response",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"delayed-response\",\n    \"route\": \"/gas-station-api\",\n    \"httpStatus\": 201,\n    \"delay\" : 10000,\n    \"payloadResponse\": \"{\\r\\n \\\"name\\\": \\\"Loja de Conveni\\u00EAncia\\\",\\r\\n \\\"lat\\\": \\\"-26.99999\\\",\\r\\n \\\"lng\\\": \\\"-25.99999\\\",\\r\\n \\\"gas-types\\\": [\\r\\n \\\"Coca-Cola\\\",\\r\\n \\\"RedBull\\\"\\r\\n ]\\r\\n}\",\n    \"headersResponse\": {}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/behaviors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"behaviors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-behavior-error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"error-response\",\n    \"route\": \"/gas-station-api\",\n    \"httpStatus\": 403,\n    \"payloadResponse\": \"{ \\\"error-code\\\" : \\\"66691\\\", \\\"error-msg\\\" : \\\"N\\u00E3o foi possivel executar a opera\\u00E7\\u00E3o.\\\"}\",\n    \"headersResponse\": {\"x-header-1\" : \"valor1\",\"x-header-2\" : \"valor2\",\"x-header-3\" : \"valor3\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/behaviors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"behaviors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Backend",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://run.mocky.io/v3/a25b6b6c-c924-41c0-b4cc-7480369c7830",
+					"protocol": "https",
+					"host": [
+						"run",
+						"mocky",
+						"io"
+					],
+					"path": [
+						"v3",
+						"a25b6b6c-c924-41c0-b4cc-7480369c7830"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
